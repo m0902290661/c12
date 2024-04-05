@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>運算程式（一元二次方程式）</title>
+    <style>
+        .d img{
+            height: 24px;
+        }
+        .d{
+            text-align: center;
+            border: 1px solid black;
+            padding: 30px;
+            width: 285px;
+        }
+    </style>
+    <script>
+        function content(){
+            var a = document.getElementById('a').value;
+            var b = document.getElementById('b').value;
+            var c = document.getElementById('c').value;
+            var s = (Math.pow(b,2) - 4*(a*c));
+            if(s===0){
+                var ans1 = (0-b) / 2*a;
+                document.getElementById('out').innerHTML='結果為'+ans1;
+            }
+            var s1 = Math.sqrt(s);
+            var s2 = 0 - b;
+            var ans2 = (s2 - s1) / 2;
+            var ans3 = (s2 + s1) / 2;
+            document.getElementById('out').innerHTML='結果為'+ans2+'或'+ans3;
+        }
+    </script>
+</head>
+<body>
+    <div class="d">
+        <h1>一元二次方程式</h1>
+        <p>（運算程式part2）</p>
+        <img src="格式.png" alt="格式"><br>
+        <input type="number" placeholder="a" id="a"><br>
+        <input type="number" placeholder="b" id="b"><br>
+        <input type="number" placeholder="c" id="c"><br>
+        <button onclick="content()">運算</button>
+        <p id="out"></p>
+    </div>
+</body>
+</html>
